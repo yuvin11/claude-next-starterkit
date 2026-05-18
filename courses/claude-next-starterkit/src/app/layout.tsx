@@ -3,6 +3,7 @@
 
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
 // Geist 폰트 설정 (Vercel이 만든 개발자 친화적 폰트)
@@ -43,7 +44,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* attribute="class": 다크모드 시 <html class="dark">로 전환됩니다 */}
+        {/* defaultTheme="system": 기본값으로 OS 설정을 따릅니다 */}
+        {/* enableSystem: OS 다크모드 설정을 자동 감지합니다 */}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

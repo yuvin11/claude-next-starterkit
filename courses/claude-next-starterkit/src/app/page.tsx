@@ -1,6 +1,7 @@
 // 메인 페이지 — 스타터킷의 모든 컴포넌트를 시연하는 쇼케이스 페이지입니다
 // 이 파일을 참고하여 새로운 페이지를 만들어 보세요
 
+import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -28,6 +29,14 @@ import {
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
+
+      {/* ===== 상단 네비게이션 바 ===== */}
+      <nav className="border-b">
+        <div className="container mx-auto px-4 h-14 flex items-center justify-between">
+          <span className="font-semibold">Next.js 스타터킷</span>
+          <ThemeToggle />
+        </div>
+      </nav>
 
       {/* ===== 히어로 섹션 ===== */}
       <section className="container mx-auto px-4 py-24 text-center">
