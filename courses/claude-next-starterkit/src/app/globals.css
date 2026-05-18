@@ -2,6 +2,11 @@
 /* v3의 @tailwind base/components/utilities 대신 @import 한 줄로 대체됩니다 */
 @import "tailwindcss";
 
+/* TailwindCSS v4의 dark: variant를 class 기반으로 설정합니다
+   next-themes는 <html class="dark">로 다크모드를 활성화하므로
+   이 선언이 없으면 dark: 클래스가 동작하지 않습니다 */
+@variant dark (&:where(.dark, .dark *));
+
 /* ============================================================
    @theme inline — TailwindCSS에 커스텀 값을 등록하는 블록
 
